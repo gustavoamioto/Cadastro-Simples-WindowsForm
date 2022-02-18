@@ -18,5 +18,11 @@ namespace projetoum
         {
             this.Close();
         }
+
+        private void botao_excluir_Click(object sender, EventArgs e)
+        {
+            form_excluir_cliente excluir_cliente = new form_excluir_cliente();
+            excluir_cliente.Show();        
+        }
     }
 }

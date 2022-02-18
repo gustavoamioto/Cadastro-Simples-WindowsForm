@@ -42,6 +42,8 @@
             this.botao_cadastrar = new System.Windows.Forms.Button();
             this.botao_fechar = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.botao_alterar = new System.Windows.Forms.Button();
+            this.botao_excluir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_nome
@@ -160,11 +162,32 @@
             this.botao_fechar.UseVisualStyleBackColor = true;
             this.botao_fechar.Click += new System.EventHandler(this.botao_fechar_Click);
             // 
+            // botao_alterar
+            // 
+            this.botao_alterar.Location = new System.Drawing.Point(267, 360);
+            this.botao_alterar.Name = "botao_alterar";
+            this.botao_alterar.Size = new System.Drawing.Size(75, 23);
+            this.botao_alterar.TabIndex = 15;
+            this.botao_alterar.Text = "Alterar";
+            this.botao_alterar.UseVisualStyleBackColor = true;
+            // 
+            // botao_excluir
+            // 
+            this.botao_excluir.Location = new System.Drawing.Point(363, 360);
+            this.botao_excluir.Name = "botao_excluir";
+            this.botao_excluir.Size = new System.Drawing.Size(75, 23);
+            this.botao_excluir.TabIndex = 16;
+            this.botao_excluir.Text = "Excluir";
+            this.botao_excluir.UseVisualStyleBackColor = true;
+            this.botao_excluir.Click += new System.EventHandler(this.botao_excluir_Click);
+            // 
             // form_cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.botao_excluir);
+            this.Controls.Add(this.botao_alterar);
             this.Controls.Add(this.botao_fechar);
             this.Controls.Add(this.botao_cadastrar);
             this.Controls.Add(this.label5);
@@ -202,5 +225,7 @@
         private Button botao_cadastrar;
         private Button botao_fechar;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Button botao_alterar;
+        private Button botao_excluir;
     }
 }

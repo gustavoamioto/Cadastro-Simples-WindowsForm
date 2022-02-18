@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,14 +33,32 @@ namespace projetoum
             Conexao.Close();
         }
 
-        public void excluir()
+        public void excluir(string nome)
         {
-            
+            MySqlCommand comando = new MySqlCommand("DELETE FROM CLIENTES WHERE NOME = @parametro", Conexao);
+
+            comando.Parameters.AddWithValue("parametro", nome);
+
+            Conexao.Open();
+
+            comando.ExecuteNonQuery();
+
+            Conexao.Close();
         }
 
-        public void carregar_grade()
+        public DataTable carregar_grade()
         {
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM CLIENTES", Conexao);
 
+            Conexao.Open();
+
+            MySqlDataAdapter da = new MySqlDataAdapter(comando);
+
+            DataTable tabela_temporaria = new DataTable();
+
+            da.Fill(tabela_temporaria);
+
+            return tabela_temporaria;
         }
     }
 }
