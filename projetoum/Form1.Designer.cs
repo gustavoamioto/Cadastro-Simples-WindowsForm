@@ -116,9 +116,9 @@
             // 
             // botao_pesquisar
             // 
-            this.botao_pesquisar.BackgroundImage = global::projetoum.Properties.Resources.search_icon;
+            this.botao_pesquisar.BackgroundImage = global::projetocadastros.Properties.Resources.search_icon;
             this.botao_pesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.botao_pesquisar.Image = global::projetoum.Properties.Resources.search_icon;
+            this.botao_pesquisar.Image = global::projetocadastros.Properties.Resources.search_icon;
             this.botao_pesquisar.Location = new System.Drawing.Point(348, 124);
             this.botao_pesquisar.Name = "botao_pesquisar";
             this.botao_pesquisar.Size = new System.Drawing.Size(24, 24);

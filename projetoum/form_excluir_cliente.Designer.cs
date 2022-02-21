@@ -42,6 +42,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(128, 99);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(540, 242);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -63,6 +64,7 @@
             this.botao_fechar.TabIndex = 18;
             this.botao_fechar.Text = "Fechar";
             this.botao_fechar.UseVisualStyleBackColor = true;
+            this.botao_fechar.Click += new System.EventHandler(this.botao_fechar_Click);
             // 
             // form_excluir_cliente
             // 

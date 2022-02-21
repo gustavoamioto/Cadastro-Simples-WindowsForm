@@ -33,11 +33,11 @@ namespace projetoum
             Conexao.Close();
         }
 
-        public void excluir(string nome)
+        public void excluir(int id)
         {
-            MySqlCommand comando = new MySqlCommand("DELETE FROM CLIENTES WHERE NOME = @parametro", Conexao);
+            MySqlCommand comando = new MySqlCommand("DELETE FROM CLIENTES WHERE id = @parametro", Conexao);
 
-            comando.Parameters.AddWithValue("parametro", nome);
+            comando.Parameters.AddWithValue("parametro", id);
 
             Conexao.Open();
 

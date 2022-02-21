@@ -21,6 +21,7 @@ namespace projetoum
         {
             Funcoesbd funcao = new Funcoesbd();
             dataGridView1.DataSource = funcao.carregar_grade();
+            this.dataGridView1.Columns[0].Visible = false;
         }
 
         private void botao_excluir_Click(object sender, EventArgs e)
@@ -29,20 +30,24 @@ namespace projetoum
                 
             if(resultado == DialogResult.Yes)
             {
-                MessageBox.Show("Excluido com Sucesso! (TESTE)");
+                int id = (int)this.dataGridView1.SelectedRows[0].Cells[0].Value;
+                Funcoesbd funcao_excluir = new Funcoesbd();
+                funcao_excluir.excluir(id);
+
+                MessageBox.Show("Excluido com Sucesso!");
             }
             else if(resultado == DialogResult.No)
             {
-                MessageBox.Show("Solicitação de Exclusão Cancelada! (TESTE)");
+                MessageBox.Show("Solicitação de Exclusão Cancelada!");
             }
-            /*
-            int linha = dataGridView1.CurrentRow.Index;
-            int coluna = 0;
-
-            string nome = dataGridView1.Rows[linha].Cells[coluna].Value.ToString();*/
-
+            
             Funcoesbd funcao = new Funcoesbd();
             dataGridView1.DataSource = funcao.carregar_grade();
+        }
+
+        private void botao_fechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
