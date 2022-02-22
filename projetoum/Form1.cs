@@ -24,5 +24,11 @@ namespace projetoum
             form_excluir_cliente excluir_cliente = new form_excluir_cliente();
             excluir_cliente.Show();        
         }
+
+        private void botao_pesquisar_Click(object sender, EventArgs e)
+        {
+            Funcoesbd funcao_pesquisar = new Funcoesbd();
+            funcao_pesquisar.pesquisarCPF(txt_cpf.Text);
+        }
     }
 }

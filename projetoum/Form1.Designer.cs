@@ -124,6 +124,7 @@
             this.botao_pesquisar.Size = new System.Drawing.Size(24, 24);
             this.botao_pesquisar.TabIndex = 8;
             this.botao_pesquisar.UseVisualStyleBackColor = true;
+            this.botao_pesquisar.Click += new System.EventHandler(this.botao_pesquisar_Click);
             // 
             // label5
             // 

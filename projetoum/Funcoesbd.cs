@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql;
 using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace projetoum
 {
@@ -59,6 +61,25 @@ namespace projetoum
             da.Fill(tabela_temporaria);
 
             return tabela_temporaria;
+        }
+
+        public void pesquisarCPF(string cpf)
+        {
+            MySqlCommand comando = new MySqlCommand("SELECT COUNT(*) FROM CLIENTES WHERE CPF = @parametro", Conexao);
+
+            comando.Parameters.AddWithValue("parametro", cpf);
+
+            Conexao.Open();
+
+            int count = Convert.ToInt32(comando.ExecuteScalar());
+
+            if (count > 0)
+            {
+                MessageBox.Show("Este CPF está cadastrado no Banco de dados: " + cpf);
+            }
+            else { MessageBox.Show("CPF não encontrado!"); }
+
+            Conexao.Close();
         }
     }
 }
